@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+ENV STEAM_HOME /opt/local/steamcmd
+
+RUN apt-get update
+RUN apt-get -y install curl lib32gcc1
+RUN mkdir -p $STEAM_HOME && cd $STEAM_HOME && curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -xzv
+
+WORKDIR $STEAM_HOME
+
+ENTRYPOINT $STEAM_HOME/steamcmd.sh
