@@ -1,4 +1,5 @@
 FROM steamcmd:latest
+MAINTAINER fernandoasfj@gmail.com
 
 RUN $STEAMCMD_HOME/steamcmd.sh +login anonymous +force_install_dir $HOME/csgo +app_update 740 validate +quit
 
