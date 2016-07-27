@@ -1,5 +1,5 @@
-#How to
+# ThoughtStrike:__GO__
+![ThoughtStrike](logo.jpg?raw=true "ThoughtStrike")
 
-1. `docker build -f Dockerfile.steamcmd .`
-2. `docker build -f Dockerfile.csgo .`
-3. Profit? 
+## Use
+Download docker, and docker-compose.  Then run `docker-compose run -e RCON_PASSWORD=admin_password csgo`
