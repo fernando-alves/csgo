@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  csgo:
+    image: fernandoalves/csgo:latest 
+    volumes:
+      - /tmp/csgo:/var/lib/csgo
+    ports:
+      - "27015:27015"
+    restart: always
+
+  steamcmd:
+    image: fernandoalves/steamcmd:latest 

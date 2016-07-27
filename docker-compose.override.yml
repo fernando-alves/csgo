@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  csgo:
+    build: ./csgo
+
+  steamcmd:
+    build: ./steamcmd
