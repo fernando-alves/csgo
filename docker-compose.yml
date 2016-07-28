@@ -13,11 +13,14 @@ services:
     volumes:
       - ./mounted/csgo:/var/lib/csgo
     ports:
-      - "27014-27050/tcp"
-      - "3478/udp"
-      - "4379-4380/udp"
-      - "27000-27030/udp"
-      - "51840/udp"
+      - "27015:27015/tcp"
+      - "27016:27016/tcp"
+      - "27015:27015/udp"
+      - "27016:27016/udp"
+      - "3478:3478/udp"
+      - "4379:4379/udp"
+      - "4380:4380/udp"
+      - "51840:51840/udp"
     restart: always
     networks:
       - front
@@ -27,4 +30,4 @@ services:
       - MAP_GROUP=mg_bomb
       - MAP=de_dust2
       - RCON_PASSWORD=supersecret
-  #      - UPDATE=true
+      - UPDATE=true
