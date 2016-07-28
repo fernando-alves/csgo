@@ -1,0 +1,52 @@
+"gamemods_server.txt"
+{
+  "gameTypes"
+  {
+    "classic"
+    {
+      "gameModes"
+      {
+        "casual"
+        {
+          "maxplayers"    "20" // Note that maxplayers doesn't go in the convar block.
+          "exec"
+          {
+            "exec"    "gamemode_competitive.cfg"
+          }
+          "mapgroupsMP" // List of mapgroups valid for this game mode ( competitive )
+          {
+            "mg_bomb"  ""
+          }
+        }
+        "competitive"
+        {
+          "maxplayers"    "12" // Note that maxplayers doesn't go in the convar block.
+          "exec"
+          {
+            "exec"    "gamemode_competitive.cfg"
+          }
+          "mapgroupsMP" // List of mapgroups valid for this game mode ( competitive )
+          {
+            "mg_bomb"  ""
+          }
+        }
+      } 
+    }
+  }
+  "mapgroups"
+  {
+    "mg_bomb" // mapgroup definition
+    {
+      "name"      "mg_bomb"
+      "maps"
+      {
+        "de_dust"    ""
+        "de_dust2"   ""
+        "de_train"   ""
+        "de_nuke"    ""
+        "de_inferno"   ""
+        "de_aztec"   ""
+      }
+    }
+  }
+}

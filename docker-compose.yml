@@ -1,13 +1,30 @@
 version: '2'
 
-services:
-  csgo:
-    image: fernandoalves/csgo:latest 
-    volumes:
-      - /tmp/csgo:/var/lib/csgo
-    ports:
-      - "27015:27015"
-    restart: always
+networks:
+  front:
+    driver: bridge
 
+services:
   steamcmd:
     image: fernandoalves/steamcmd:latest 
+
+  csgo:
+    image: fernandoalves/csgo:latest
+    volumes:
+      - ./mounted/csgo:/var/lib/csgo
+    ports:
+      - "27014-27050/tcp"
+      - "3478/udp"
+      - "4379-4380/udp"
+      - "27000-27030/udp"
+      - "51840/udp"
+    restart: always
+    networks:
+      - front
+    environment:
+      - GAME_TYPE=0         # 0 is Classic type. 1 is Gungame type.
+      - GAME_MODE=1         # If game_type is 0 then mode 0 is Classic Casual and 1 is Classic Competitive. If game_type is 1 then mode 0 is Arms Race and 1 is Demolition.
+      - MAP_GROUP=mg_bomb
+      - MAP=de_dust2
+      - RCON_PASSWORD=supersecret
+  #      - UPDATE=true
